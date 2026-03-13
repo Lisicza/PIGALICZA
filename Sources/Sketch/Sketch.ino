@@ -1,4 +1,10 @@
+
+
+#include "input_worker.h"
+#include "commander.h"
+
 void input_task(void *pvParameters){
+  input_worker Input_worker;
   while(1) {  // Бесконечный цикл - обязательно!
     Serial.println("Ядро 1 активно");
     Serial.println(xPortGetCoreID());
@@ -8,7 +14,9 @@ void input_task(void *pvParameters){
 }
 
 void main_task(void *pvParameters){
+  commander Commander;
   while(1) {  // Бесконечный цикл - обязательно!
+    Commander.process();
     Serial.println("Ядро 2 активно");
     Serial.println(xPortGetCoreID());
     Serial.println();
