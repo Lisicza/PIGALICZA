@@ -1,3 +1,5 @@
+#define ARRSIZE  6
+
 void input_task(void *pvParameters){
   while(1) {  // Бесконечный цикл - обязательно!
     Serial.println("Ядро 1 активно");
